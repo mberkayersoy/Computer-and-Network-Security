@@ -1,0 +1,24 @@
+root@kali:~# ls
+airodumptest-01.cap            airodumptest-01.log.csv  Downloads  Templates
+airodumptest-01.csv            bettercap.history        Music      test.sh
+airodumptest-01.kismet.csv     Desktop                  Pictures   Videos
+airodumptest-01.kismet.netxml  Documents                Public
+root@kali:~# cd Desktop
+root@kali:~/Desktop# touch test.sh
+root@kali:~/Desktop# chmod +x test.sh
+root@kali:~/Desktop# ./test.sh
+root@kali:~/Desktop# nano ./test.sh
+root@kali:~/Desktop# cat ./test.sh
+files=$(shopt -s nullglob dotglob; echo /root/Desktop/test.sh*)
+if (( ${#files} ))
+then
+    echo "contains files"
+else
+    echo "empty (or does not exist or is a file)"
+fi
+
+root@kali:~/Desktop# ./test.sh
+contains files
+root@kali:~/Desktop# 
+
+
